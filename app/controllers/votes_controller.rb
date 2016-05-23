@@ -5,7 +5,7 @@ class VotesController < ApplicationController
     unless session[:voter]
       redirect_to new_registration_path
     else
-      @voter = Voter.find_by({voter_id: session[:voter]['id']})
+      @voter = Voter.find_by({id: session[:voter]['id']})
       @issues = Issue.all
       @national_issues = Issue.joins(:issue_type)
                               .where(issue_types: {national: true})
