@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :about
   get 'about/index' => 'about#index'
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :issues, only: [:show, :index]
   resources :ballots, only: [:show, :index]
   resources :votes, only: [:new, :create]
